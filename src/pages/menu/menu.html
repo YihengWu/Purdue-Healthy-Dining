@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar floating>
+    <ion-title>Menu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content floating>
+  <ion-list *ngFor="let station of savedMeal.Stations">
+    <ion-list-header>{{station.Name}}</ion-list-header>
+
+    <div *ngFor="let item of station.Items">
+      <button ion-item *ngIf="item.Selected" color="danger" (click)="itemSelected(item)">
+        {{ item.Name }}
+      </button>
+      <button ion-item *ngIf="!item.Selected" (click)="itemSelected(item)">
+        {{ item.Name }}
+      </button>
+    </div>
+
+  </ion-list>
+  <button ion-button full color="light" (click)="openCaloryCalculation()">Nutrient Calculation</button>
+</ion-content>

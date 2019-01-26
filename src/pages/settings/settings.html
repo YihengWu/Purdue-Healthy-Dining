@@ -1,0 +1,39 @@
+<ion-header floating>
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-list-header>
+      Personal Information
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label floating>Gender</ion-label>
+      <ion-select [(ngModel)]="userGender" (ionChange)="onSelectGender()">
+        <ion-option value="Male">Male</ion-option>
+        <ion-option value="Female">Female</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Weight(lbs)</ion-label>
+      <ion-input type="text" [(ngModel)]="userWeight" (ionChange)="update_weight()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Height(ft)</ion-label>
+      <ion-input type="text" [(ngModel)]="userHeight" (ionChange)="update_height()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Age</ion-label>
+      <ion-input type="text" [(ngModel)]="userAge" (ionChange)="update_age()"></ion-input>
+    </ion-item>
+
+
+  </ion-list>
+</ion-content>
